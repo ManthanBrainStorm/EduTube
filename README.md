@@ -1,14 +1,23 @@
-# EduTube — SaaS Starter
+# EduTube
 
-A production-ready SaaS starter built with **Next.js 15**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
+**Turn YouTube playlists into structured courses.**
+
+A premium SaaS starter built with Next.js 15, TypeScript, Tailwind CSS, and shadcn/ui. Dark-mode first, inspired by Linear, Notion, and Arc Browser.
+
+## Core Workflow
+
+1. Paste a YouTube playlist URL
+2. Generate a structured course
+3. Track progress across lessons
+4. Resume exactly where you left off
 
 ## Tech Stack
 
 - Next.js 15 (App Router)
 - TypeScript
 - Tailwind CSS
-- shadcn/ui (New York style)
-- Lucide React icons
+- shadcn/ui
+- Lucide React
 
 ## Getting Started
 
@@ -17,49 +26,44 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Landing — hero with playlist input + transformation mockup |
+| `/login` | Sign in |
+| `/signup` | Create account |
+| `/dashboard` | Library of imported playlists + import bar |
+| `/courses/[id]` | Course view — video player + lesson sidebar |
 
 ## Project Structure
 
 ```
 src/
 ├── app/
-│   ├── (auth)/          # Auth route group
-│   │   ├── login/
-│   │   └── signup/
-│   ├── (dashboard)/     # Dashboard route group
-│   │   ├── dashboard/
-│   │   └── courses/[id]/
-│   ├── (marketing)/     # Landing page route group
-│   ├── layout.tsx
-│   └── globals.css
+│   ├── (marketing)/     Landing page
+│   ├── (auth)/          Login & signup
+│   └── (dashboard)/     Library + course player
 ├── components/
-│   ├── auth/            # Auth form components
-│   ├── dashboard/       # Dashboard-specific components
-│   ├── layout/          # Navbar, Sidebar, Footer
-│   ├── marketing/       # Landing page sections
-│   └── ui/              # shadcn/ui primitives
-├── data/                # Dummy data & nav config
-└── lib/                 # Utilities & constants
+│   ├── auth/
+│   ├── course/          Video player + lesson sidebar
+│   ├── dashboard/       Import bar, playlist cards, stats
+│   ├── layout/          Marketing header/footer, app sidebar
+│   ├── marketing/       Hero, how-it-works, features, FAQ
+│   ├── shared/          Logo
+│   └── ui/              shadcn/ui primitives
+├── data/                Mock playlist data
+└── lib/                 Utils & constants
 ```
 
-## Pages
+## Design
 
-| Route            | Description        |
-| ---------------- | ------------------ |
-| `/`              | Landing page       |
-| `/login`         | Login page         |
-| `/signup`        | Signup page        |
-| `/dashboard`     | Dashboard overview |
-| `/courses/[id]`  | Course detail page |
-
-## Scripts
-
-- `npm run dev` — Start development server
-- `npm run build` — Production build
-- `npm run start` — Start production server
-- `npm run lint` — Run ESLint
+- **Dark mode first** — deep backgrounds, subtle borders, violet accent
+- **No generic LMS** — no fake instructors, certificates, or marketplace
+- **Product Hunt ready** — premium startup aesthetic with interactive hero mockup
 
 ## Notes
 
-This is a **structure-only starter**. No authentication, database, or business logic is included. Wire up your preferred auth provider and data layer as needed.
+Structure and UI only. No YouTube API integration, auth, or database included.

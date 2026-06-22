@@ -15,17 +15,22 @@ import { ROUTES } from "@/lib/constants";
 
 export function SignupForm() {
   return (
-    <Card className="w-full max-w-md">
+    <Card className="border-border/60 bg-card/50 backdrop-blur-sm">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Create an account</CardTitle>
+        <CardTitle className="text-xl">Create your account</CardTitle>
         <CardDescription>
-          Get started with your free account today
+          Start turning YouTube playlists into courses
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="name">Full Name</Label>
-          <Input id="name" type="text" placeholder="Jane Doe" />
+          <Label htmlFor="name">Name</Label>
+          <Input
+            id="name"
+            type="text"
+            placeholder="Jane Doe"
+            className="border-border/60 bg-background/50"
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
@@ -33,7 +38,7 @@ export function SignupForm() {
             id="email"
             type="email"
             placeholder="you@example.com"
-            autoComplete="email"
+            className="border-border/60 bg-background/50"
           />
         </div>
         <div className="space-y-2">
@@ -42,21 +47,21 @@ export function SignupForm() {
             id="password"
             type="password"
             placeholder="••••••••"
-            autoComplete="new-password"
+            className="border-border/60 bg-background/50"
           />
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-4">
-        <Button className="w-full" asChild>
-          <Link href={ROUTES.dashboard}>Create Account</Link>
+        <Button className="w-full glow-sm" asChild>
+          <Link href={ROUTES.dashboard}>Create account</Link>
         </Button>
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
           <Link
             href={ROUTES.login}
-            className="font-medium text-foreground underline-offset-4 hover:underline"
+            className="text-violet-400 underline-offset-4 hover:underline"
           >
-            Log in
+            Sign in
           </Link>
         </p>
       </CardFooter>

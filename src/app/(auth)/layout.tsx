@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { APP_NAME } from "@/lib/constants";
+import { Logo } from "@/components/shared/logo";
+import { ROUTES } from "@/lib/constants";
 
 export default function AuthLayout({
   children,
@@ -8,14 +9,17 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-muted/30 px-4">
+    <div className="relative flex min-h-screen flex-col items-center justify-center px-4">
+      <div className="pointer-events-none absolute inset-0 grid-bg" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-violet-600/10 blur-[100px]" />
+
       <Link
-        href="/"
-        className="mb-8 text-xl font-semibold transition-opacity hover:opacity-80"
+        href={ROUTES.home}
+        className="relative mb-8 transition-opacity hover:opacity-80"
       >
-        {APP_NAME}
+        <Logo />
       </Link>
-      {children}
+      <div className="relative w-full max-w-md">{children}</div>
     </div>
   );
 }

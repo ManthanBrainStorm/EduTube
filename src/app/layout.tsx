@@ -15,10 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "EduTube",
+    default: "EduTube — Turn YouTube Playlists into Courses",
     template: "%s | EduTube",
   },
-  description: "Learn anything, anywhere — a modern learning platform starter.",
+  description:
+    "Paste any YouTube playlist URL and get a structured course with progress tracking. Built for students, developers, and self-learners.",
 };
 
 export default function RootLayout({
@@ -27,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background font-sans antialiased`}
       >
         {children}
       </body>

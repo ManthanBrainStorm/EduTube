@@ -7,3 +7,6 @@ export const ROUTES = {
   dashboard: "/dashboard",
   course: (id: string) => `/courses/${id}`,
 } as const;
+
+export const DEMO_PLAYLIST_URL =
+  "https://www.youtube.com/playlist?list=PLrAXtmRdnEQy6nuLMHjMZ";

@@ -15,11 +15,11 @@ import { ROUTES } from "@/lib/constants";
 
 export function LoginForm() {
   return (
-    <Card className="w-full max-w-md">
+    <Card className="border-border/60 bg-card/50 backdrop-blur-sm">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl">Welcome back</CardTitle>
+        <CardTitle className="text-xl">Welcome back</CardTitle>
         <CardDescription>
-          Enter your credentials to access your account
+          Sign in to access your imported playlists
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -29,7 +29,7 @@ export function LoginForm() {
             id="email"
             type="email"
             placeholder="you@example.com"
-            autoComplete="email"
+            className="border-border/60 bg-background/50"
           />
         </div>
         <div className="space-y-2">
@@ -38,19 +38,19 @@ export function LoginForm() {
             id="password"
             type="password"
             placeholder="••••••••"
-            autoComplete="current-password"
+            className="border-border/60 bg-background/50"
           />
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-4">
-        <Button className="w-full" asChild>
-          <Link href={ROUTES.dashboard}>Sign In</Link>
+        <Button className="w-full glow-sm" asChild>
+          <Link href={ROUTES.dashboard}>Sign in</Link>
         </Button>
         <p className="text-center text-sm text-muted-foreground">
-          Don&apos;t have an account?{" "}
+          No account?{" "}
           <Link
             href={ROUTES.signup}
-            className="font-medium text-foreground underline-offset-4 hover:underline"
+            className="text-violet-400 underline-offset-4 hover:underline"
           >
             Sign up
           </Link>
